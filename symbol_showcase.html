@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 任務管理系統 - 符號系統展示</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+        .category {
+            margin-bottom: 50px;
+        }
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #e2e8f0;
+        }
+        .category-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        .category-desc {
+            color: #718096;
+            font-size: 0.95em;
+        }
+        .revenue { color: #FF8C00; }
+        .traffic { color: #1E90FF; }
+        .admin { color: #64748b; }
+        .symbols-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .symbol-card {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .symbol-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: currentColor;
+        }
+        .symbol-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .symbol-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .symbol-name {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+        .symbol-keywords {
+            font-size: 0.85em;
+            color: #a0aec0;
+            line-height: 1.5;
+        }
+        .design-principles {
+            background: #edf2f7;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 40px;
+        }
+        .design-principles h3 {
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+        .design-principles ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .design-principles li {
+            padding: 8px 0;
+            color: #4a5568;
+            padding-left: 25px;
+            position: relative;
+        }
+        .design-principles li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚦 AI 任務管理系統</h1>
+        <div class="subtitle">交通標誌風格符號系統展示</div>
+        
+        <div class="design-principles">
+            <h3>設計原則</h3>
+            <ul>
+                <li><strong>顏色編碼</strong>: 不同重要性等級使用不同顏色(金色=營收、藍色=流量、灰色=行政)</li>
+                <li><strong>形狀編碼</strong>: 不同重要性等級使用不同形狀(圓形=營收、菱形=流量、方形=行政)</li>
+                <li><strong>高對比度</strong>: 白色圖案 + 彩色底,確保清晰辨識</li>
+                <li><strong>一眼辨識</strong>: 類似交通標誌,無需文字即可理解</li>
+            </ul>
+        </div>
+
+        <!-- 一級|營收 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title revenue">一級 | 營收</div>
+                <div class="category-desc">金色圓形系列 - 直接銷售、營收相關</div>
+            </div>
+            <div class="symbols-grid">
+                <div class="symbol-card revenue">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/revenue/direct-sales.png" alt="直接銷售">
+                    </div>
+                    <div class="symbol-name">直接銷售</div>
+                    <div class="symbol-keywords">銷售、賣、業績、成交、訂單</div>
+                </div>
+                <div class="symbol-card revenue">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/revenue/client-visit.png" alt="客戶拜訪">
+                    </div>
+                    <div class="symbol-name">客戶拜訪</div>
+                    <div class="symbol-keywords">客戶、拜訪、會面、洽談、商談</div>
+                </div>
+                <div class="symbol-card revenue">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/revenue/contract-signing.png" alt="簽約成交">
+                    </div>
+                    <div class="symbol-name">簽約成交</div>
+                    <div class="symbol-keywords">簽約、合約、協議、成交、簽署</div>
+                </div>
+                <div class="symbol-card revenue">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/revenue/product-demo.png" alt="產品展示">
+                    </div>
+                    <div class="symbol-name">產品展示</div>
+                    <div class="symbol-keywords">展示、產品、示範、介紹、呈現</div>
+                </div>
+                <div class="symbol-card revenue">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/revenue/quotation.png" alt="報價提案">
+                    </div>
+                    <div class="symbol-name">報價提案</div>
+                    <div class="symbol-keywords">報價、提案、估價、價格、方案</div>
+                </div>
+                <div class="symbol-card revenue">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/revenue/order-processing.png" alt="訂單處理">
+                    </div>
+                    <div class="symbol-name">訂單處理</div>
+                    <div class="symbol-keywords">訂單、處理、下單、購買、採購</div>
+                </div>
+                <div class="symbol-card revenue">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/revenue/payment-collection.png" alt="收款催款">
+                    </div>
+                    <div class="symbol-name">收款催款</div>
+                    <div class="symbol-keywords">收款、催款、付款、帳款、應收</div>
+                </div>
+                <div class="symbol-card revenue">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/revenue/contract-review.png" alt="合約審核">
+                    </div>
+                    <div class="symbol-name">合約審核</div>
+                    <div class="symbol-keywords">審核、合約、檢查、確認、核對</div>
+                </div>
+                <div class="symbol-card revenue">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/revenue/pricing-strategy.png" alt="定價策略">
+                    </div>
+                    <div class="symbol-name">定價策略</div>
+                    <div class="symbol-keywords">定價、價格、策略、訂價、成本</div>
+                </div>
+                <div class="symbol-card revenue">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/revenue/revenue-analysis.png" alt="營收分析">
+                    </div>
+                    <div class="symbol-name">營收分析</div>
+                    <div class="symbol-keywords">營收、分析、財務、收入、獲利</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 二級|流量 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title traffic">二級 | 流量</div>
+                <div class="category-desc">藍色菱形系列 - 增加流量相關</div>
+            </div>
+            <div class="symbols-grid">
+                <div class="symbol-card traffic">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/traffic/seo-optimization.png" alt="SEO 優化">
+                    </div>
+                    <div class="symbol-name">SEO 優化</div>
+                    <div class="symbol-keywords">SEO、搜尋、優化、排名、關鍵字</div>
+                </div>
+                <div class="symbol-card traffic">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/traffic/social-media.png" alt="社群經營">
+                    </div>
+                    <div class="symbol-name">社群經營</div>
+                    <div class="symbol-keywords">社群、粉絲、社交、互動、社團</div>
+                </div>
+                <div class="symbol-card traffic">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/traffic/content-writing.png" alt="內容撰寫">
+                    </div>
+                    <div class="symbol-name">內容撰寫</div>
+                    <div class="symbol-keywords">內容、撰寫、文章、寫作、編輯</div>
+                </div>
+                <div class="symbol-card traffic">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/traffic/advertising.png" alt="廣告投放">
+                    </div>
+                    <div class="symbol-name">廣告投放</div>
+                    <div class="symbol-keywords">廣告、投放、行銷、推廣、宣傳</div>
+                </div>
+                <div class="symbol-card traffic">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/traffic/data-analysis.png" alt="數據分析">
+                    </div>
+                    <div class="symbol-name">數據分析</div>
+                    <div class="symbol-keywords">數據、分析、統計、報表、指標</div>
+                </div>
+                <div class="symbol-card traffic">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/traffic/website-optimization.png" alt="網站優化">
+                    </div>
+                    <div class="symbol-name">網站優化</div>
+                    <div class="symbol-keywords">網站、優化、改善、速度、體驗</div>
+                </div>
+                <div class="symbol-card traffic">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/traffic/email-marketing.png" alt="電郵行銷">
+                    </div>
+                    <div class="symbol-name">電郵行銷</div>
+                    <div class="symbol-keywords">電郵、郵件、EDM、信件、通知</div>
+                </div>
+                <div class="symbol-card traffic">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/traffic/video-production.png" alt="影片製作">
+                    </div>
+                    <div class="symbol-name">影片製作</div>
+                    <div class="symbol-keywords">影片、視頻、拍攝、剪輯、製作</div>
+                </div>
+                <div class="symbol-card traffic">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/traffic/event-planning.png" alt="活動企劃">
+                    </div>
+                    <div class="symbol-name">活動企劃</div>
+                    <div class="symbol-keywords">活動、企劃、策劃、規劃、舉辦</div>
+                </div>
+                <div class="symbol-card traffic">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/traffic/traffic-monitoring.png" alt="流量監控">
+                    </div>
+                    <div class="symbol-name">流量監控</div>
+                    <div class="symbol-keywords">流量、監控、追蹤、觀察、檢視</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 三級|行政 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title admin">三級 | 行政</div>
+                <div class="category-desc">灰色方形系列 - 流程優化、行政日常</div>
+            </div>
+            <div class="symbols-grid">
+                <div class="symbol-card admin">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/admin/document-review.png" alt="文件審核">
+                    </div>
+                    <div class="symbol-name">文件審核</div>
+                    <div class="symbol-keywords">審核、文件、檢查、核准、批准</div>
+                </div>
+                <div class="symbol-card admin">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/admin/weekly-report.png" alt="週報月報">
+                    </div>
+                    <div class="symbol-name">週報月報</div>
+                    <div class="symbol-keywords">週報、月報、報告、彙報、總結</div>
+                </div>
+                <div class="symbol-card admin">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/admin/process-optimization.png" alt="流程優化">
+                    </div>
+                    <div class="symbol-name">流程優化</div>
+                    <div class="symbol-keywords">流程、優化、改善、精進、提升</div>
+                </div>
+                <div class="symbol-card admin">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/admin/meeting-scheduling.png" alt="會議安排">
+                    </div>
+                    <div class="symbol-name">會議安排</div>
+                    <div class="symbol-keywords">會議、安排、排程、預約、協調</div>
+                </div>
+                <div class="symbol-card admin">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/admin/data-organization.png" alt="資料整理">
+                    </div>
+                    <div class="symbol-name">資料整理</div>
+                    <div class="symbol-keywords">資料、整理、歸檔、分類、彙整</div>
+                </div>
+                <div class="symbol-card admin">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/admin/system-maintenance.png" alt="系統維護">
+                    </div>
+                    <div class="symbol-name">系統維護</div>
+                    <div class="symbol-keywords">系統、維護、保養、修復、更新</div>
+                </div>
+                <div class="symbol-card admin">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/admin/hr-management.png" alt="人事管理">
+                    </div>
+                    <div class="symbol-name">人事管理</div>
+                    <div class="symbol-keywords">人事、管理、員工、人力、招聘</div>
+                </div>
+                <div class="symbol-card admin">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/admin/budget-planning.png" alt="預算編列">
+                    </div>
+                    <div class="symbol-name">預算編列</div>
+                    <div class="symbol-keywords">預算、編列、規劃、財務、經費</div>
+                </div>
+                <div class="symbol-card admin">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/admin/compliance-check.png" alt="合規檢查">
+                    </div>
+                    <div class="symbol-name">合規檢查</div>
+                    <div class="symbol-keywords">合規、檢查、稽核、法規、規範</div>
+                </div>
+                <div class="symbol-card admin">
+                    <div class="symbol-icon">
+                        <img src="client/public/symbols/admin/document-processing.png" alt="文書處理">
+                    </div>
+                    <div class="symbol-name">文書處理</div>
+                    <div class="symbol-keywords">文書、處理、打字、輸入、登錄</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
